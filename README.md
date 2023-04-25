@@ -316,3 +316,52 @@ sebagai mana disconnect, kita juga bisa dapat menambahkan kembali container untu
 ```
 docker network connect contoh_bridge_network mysql_container
 ```
+<br>
+
+## Inspect
+kadang kita ingin melihat informasi yang terdapat pada container seperti env, port, dll.  docker memiliki vitur inspect. yang memungkinkan kita dapat melihat informasi secara detail yang ada pada container. dengan inspect kita dapat melihat detail dari container, image, volume, dan network. kita dapat menggunakan command:
+
+```
+
+# inspect Image
+docker image inspect nama_image
+
+# inspect container
+docker container inspect nama_container
+
+# inspect volume
+docker volume inspect nama_volume
+
+# inspect network
+docker network inspect nama_network
+
+```
+
+<br> <br>
+
+## Prune
+
+Saat menggunakan docker, adakalanya kita ingin membersihkan hal-hal yang sudah tidak digunakan lagi, seperti container yang sudah stop, atau volume/ network/ atau image yang sudah tidak digunakan oleh container. <br>
+docker memiliki fitur untuk membersihkan itu semua secara otomatis yang dinamai _**Prune**_. dan hampir semua command di docker mendukung perintah _prune_ seperti container, network, volume mendukung prune. berikut contoh perintah prune
+
+```
+# Menghapus container yg sudah stop
+docker container prune
+
+# Menghapus image yang sudah tidak digunakan container
+docker image prune
+
+# Menghapus seluruh network yang sudah tidak digunakan container
+docker network prune
+
+# Menghapus seluruh volume yang sudah tidak digunakan container
+docker volume prune
+
+
+# Menghapus seluruh container, network, volume yang sudah tidak digunakan container dalam sekaligus
+docker system prune
+```
+
+
+
+
